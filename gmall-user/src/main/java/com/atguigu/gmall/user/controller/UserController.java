@@ -17,7 +17,7 @@ public class UserController {
     UserService userService;
 
     @ResponseBody
-    @RequestMapping("/index")
+    @RequestMapping("index")
     public String index(){
 
         return "hello user";

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+hello thymeleaf
+<br />
+{hello}
+<br />
+
+<p th:text="${hello}"></p>
+
+<p th:each="str:${list}" th:text="${str}"></p>
+
+<p th:each="str:${list}">
+<input th:text="${str}" th:value="${str}"></input>
+</p>
+
+<p th:if="1==1">i'm exist</p>
+
+<!--<input type="checkbox" th:text="(${check}=='0')?'checked':''" th:checked="${check}=='1'" />-->
+<input type="checkbox" th:checked="${check}=='1'">
+<br />
+
+
+<a th:href="'javascript:a(\''+${hello}+'\')'">point here</a>
+
+<div th:include="indexinner::innerPart">included page</div>
+
+<script language="JavaScript">
+    function a(hello) {
+        alert("js function used "+hello);
+    }
+</script>
+
+
+</body>
+</html>
